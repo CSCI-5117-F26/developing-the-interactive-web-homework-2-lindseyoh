@@ -1,7 +1,7 @@
 import {todos} from '#lib/server/database.js';
 
 export async function load() {
-    const reuslt = await todos
+    const results = await todos
         .find({userId: 'test-user', done: false})
         .toArray();
     return {
