@@ -4,7 +4,12 @@
 
 </script>
 
+<form method="POST" action="?/create">
+    <input name="text" placeholder="write todo here"/>
+    <button>Add Todo</button>
+</form>
+
 <h1>ye todos:</h1>
 {#each data.todos as todo}
-    <p>{todo.text}<br></p>
+    <p>{todo.text}</p>
 {/each}
