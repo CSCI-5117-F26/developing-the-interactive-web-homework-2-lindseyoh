@@ -1,8 +1,13 @@
-export function load() {
-  return {
-    todos: [
-      { id: '1', text: 'gfsdfhgtsgdgt', done: false },
-      { id: '2', text: 'agdhsnghgathsghyhsngh', done: false }
-    ]
-  };
+import {todos} from '#lib/server/database.js';
+
+export async function load() {
+    const reuslt = await todos
+        .find({userId: 'test-user', done: false})
+        .toArray();
+    return {
+        todos: results.map((todo) => ({
+            id: todo._id.toString(),
+            text: todo.text
+        }))
+    };
 }
