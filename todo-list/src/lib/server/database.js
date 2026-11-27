@@ -7,4 +7,4 @@ export const EJSON = BSON.EJSON;
 export const mongo_client = new MongoClient(MONGODB_URI);
 attachDatabasePool(mongo_client);
 
-export const db = mongo_client.db('todo-list').collection('todos');
+export const todos = mongo_client.db('todo-list').collection('todos');
